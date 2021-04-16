@@ -78,7 +78,6 @@ public class sqlTable<T> {
                 '}';
 
 
-        //newS += rows.get(0).get(0);
         return newS;
     }
 }
