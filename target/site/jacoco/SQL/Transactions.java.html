@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Transactions.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">DatabasePersistance</a> &gt; <a href="index.source.html" class="el_package">SQL</a> &gt; <span class="el_source">Transactions.java</span></div><h1>Transactions.java</h1><pre class="source lang-java linenums">package SQL;
+
+import JDBC.connection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Vector;
+
+<span class="nc" id="L10">public class Transactions {</span>
+<span class="nc" id="L11">    public static Vector&lt;String&gt; temp = new Vector&lt;&gt;();</span>
+    public static void start(Vector&lt;String&gt; sqlQuery){
+<span class="nc" id="L13">        temp = sqlQuery;</span>
+<span class="nc" id="L14">    }</span>
+
+    public static boolean end(){
+<span class="nc bnc" id="L17" title="All 2 branches missed.">        for (int i = 0; i &lt; temp.size(); i++) {</span>
+<span class="nc" id="L18">            try (Connection conn = connection.connect(); PreparedStatement pstmt = conn.prepareStatement(temp.get(i))) {</span>
+<span class="nc" id="L19">                pstmt.execute();</span>
+<span class="nc" id="L20">                return true;</span>
+<span class="nc" id="L21">            } catch (SQLException e) {</span>
+<span class="nc" id="L22">                System.out.println(e.getMessage());</span>
+<span class="nc" id="L23">                return false;</span>
+            }
+        }
+<span class="nc" id="L26">        return false;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
