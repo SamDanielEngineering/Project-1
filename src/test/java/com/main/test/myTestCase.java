@@ -4,7 +4,6 @@ import JDBC.ConnectionFactory;
 import JDBC.hello;
 import SQL.*;
 import Threads.SimpleThreadFactory;
-//import org.junit.Test;
 import Cache.*;
 import org.junit.jupiter.api.*;
 
@@ -20,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class myTestCase {
     CacheHelper temp2 = null;
-    //This tests the cache and attaches a thread to the cache.
     @Test
     @Order(1)
     public void printCache() throws Exception{
