@@ -14,7 +14,6 @@ public class Create {
                 "test1 VARCHAR( 50 )" +
                 ");";
         try (Connection conn = connection.connect(); PreparedStatement pstmt = conn.prepareStatement(SQL)) {
-            //pstmt.setString(1, tableName);
             pstmt.execute();
             return true;
         } catch (SQLException e) {
