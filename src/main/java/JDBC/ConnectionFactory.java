@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConnectionFactory {
-    private String url = "jdbc:postgresql://database-1.cmidvpydcvzn.us-east-2.rds.amazonaws.com:5432/postgres?user=sam&password=12345";
-    private String user = "sam";
-    private String password = "12345";
+    private String url = "";
+    private String user = "";
+    private String password = "";
     private List<Connection> connectionPool;
     private List<Connection> usedConnections = new ArrayList<>();
     public static ConnectionFactory conn = null;
