@@ -11,7 +11,7 @@ This application allows abstraction away from manually coding in Java with the S
 
 ## Features
 
-List of features ready and TODOs for future development
+List of features ready:
 * Persistance of objects to a PostgreSQL database.
 * CRUD support
 * Transactions
